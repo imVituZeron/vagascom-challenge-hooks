@@ -1,10 +1,11 @@
 import React from 'react';
+import Formulario from './components/Formulario';
 import Styled from 'styled-components';
 
 function App() {
   return (
     <Wrapper className="App">
-      <h1>Olá</h1>
+      <Formulario />
     </Wrapper>
   );
 }
