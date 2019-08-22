@@ -4,14 +4,14 @@ import Styled from 'styled-components';
 function Form() {
 
    const [ cont, setCont ] = useState(0);
-   const [ escolha , setEscolha] = useState([]);
+   const [ escolha , setEscolha ] = useState([]);
 
-   function handleClickNumberNegative(){
-      setCont(cont -1);
-   }
-
-   function handleClickNumberPositive(){
-      setCont(cont +1);
+   function handleClickNumbersAll(props){
+      if (props === 'mais'){
+         setCont(cont + 1);
+      } else {
+         setCont(cont -1);
+      }
    }
 
    function handleChangeEscolha(props){
@@ -58,10 +58,10 @@ function Form() {
                   <h2>Quantos stickers de cada? </h2>
                   <div className='contador'>
                      <button type='button' value='menos'
-                     onClick={() => handleClickNumberNegative()} >-</button>
+                     onClick={() => handleClickNumbersAll('menos')} >-</button>
                      <input type="text" value={cont}/> 
                      <button type='button' value='mais'
-                     onClick={()=> handleClickNumberPositive()} >+</button>
+                     onClick={()=> handleClickNumbersAll('mais')} >+</button>
                   </div>
                </div>
                <div className="stickers  note-stickers">
